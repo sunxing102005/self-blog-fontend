@@ -1,0 +1,17 @@
+{
+    "version": 3,
+    "sources": [
+        "../../src/config/config.production.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "workers",
+        "port"
+    ],
+    "mappings": "AAAA;AACAA,OAAOC,OAAP,GAAiB;AACbC,aAAS,CADI;AAEbC,UAAM;AAFO,CAAjB",
+    "file": "../../src/config/config.production.js",
+    "sourcesContent": [
+        "// production config, it will load in production enviroment\nmodule.exports = {\n    workers: 0,\n    port: 8365\n};\n"
+    ]
+}

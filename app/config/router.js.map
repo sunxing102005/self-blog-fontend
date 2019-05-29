@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "sources": [
+        "../../src/config/router.js"
+    ],
+    "names": [
+        "module",
+        "exports"
+    ],
+    "mappings": "AAAAA,OAAOC,OAAP,GAAiB,CACb,CAAC,yBAAD,EAA4B,cAA5B,EAA4C,MAA5C,CADa,EAEb,CAAC,sBAAD,EAAyB,OAAzB,CAFa,CAAjB",
+    "file": "../../src/config/router.js",
+    "sourcesContent": [
+        "module.exports = [\n    [/\\/api\\/(\\w+)(?:\\/(.*))?/, \"api/:1?id=:2\", \"rest\"],\n    [/\\/font\\/(\\w+)\\/(\\w+)/, \":1/:2\"]\n];\n"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/controller/api/meta.js"
+    ],
+    "names": [
+        "BaseRest",
+        "require",
+        "module",
+        "exports",
+        "getAction",
+        "data",
+        "id",
+        "modelInstance",
+        "where",
+        "find",
+        "sucess",
+        "type",
+        "get",
+        "order",
+        "select",
+        "success"
+    ],
+    "mappings": ";;AAAA,MAAMA,WAAWC,QAAQ,YAAR,CAAjB;;AAEAC,OAAOC,OAAP,GAAiB,cAAcH,QAAd,CAAuB;AAChCI,WAAN,GAAkB;AAAA;;AAAA;AAChB,UAAIC,OAAO,EAAX;AACA,UAAI,MAAKC,EAAT,EAAa;AACXD,eAAO,MAAKE,aAAL,CAAmBC,KAAnB,CAAyB,EAAEF,IAAI,MAAKA,EAAX,EAAzB,EAA0CG,IAA1C,EAAP;AACA,eAAO,MAAKC,MAAL,CAAYL,IAAZ,CAAP;AACD;AACD,YAAMM,OAAO,MAAKC,GAAL,CAAS,MAAT,KAAoB,UAAjC;AACAP,aAAO,MAAM,MAAKE,aAAL,CACVC,KADU,CACJ,EAAEG,IAAF,EADI,EAEVE,KAFU,CAEJ,WAFI,EAGVC,MAHU,EAAb;AAIA,aAAO,MAAKC,OAAL,CAAaV,IAAb,CAAP;AAXgB;AAYjB;AAbqC,CAAxC",
+    "file": "../../../src/controller/api/meta.js",
+    "sourcesContent": [
+        "const BaseRest = require('../rest.js');\n\nmodule.exports = class extends BaseRest {\n  async getAction() {\n    let data = {};\n    if (this.id) {\n      data = this.modelInstance.where({ id: this.id }).find();\n      return this.sucess(data);\n    }\n    const type = this.get('type') || 'category';\n    data = await this.modelInstance\n      .where({ type })\n      .order('sort desc')\n      .select();\n    return this.success(data);\n  }\n};\n"
+    ]
+}

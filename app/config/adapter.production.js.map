@@ -1,0 +1,29 @@
+{
+    "version": 3,
+    "sources": [
+        "../../src/config/adapter.production.js"
+    ],
+    "names": [
+        "path",
+        "require",
+        "exports",
+        "model",
+        "mysql",
+        "database",
+        "host",
+        "port",
+        "user",
+        "password",
+        "view",
+        "common",
+        "viewPath",
+        "join",
+        "think",
+        "ROOT_PATH"
+    ],
+    "mappings": "AAAA;AACA,MAAMA,OAAOC,QAAQ,MAAR,CAAb;AACAC,QAAQC,KAAR,GAAgB;AACZC,WAAO;AACHC,kBAAU,MADP;AAEHC,cAAM,WAFH;AAGHC,cAAM,EAHH;AAIHC,cAAM,MAJH;AAKHC,kBAAU;AALP;AADK,CAAhB;;AAUAP,QAAQQ,IAAR,GAAe;AACXC,YAAQ;AACJC,kBAAUZ,KAAKa,IAAL,CAAUC,MAAMC,SAAhB,EAA2B,cAA3B;AADN;AADG,CAAf",
+    "file": "../../src/config/adapter.production.js",
+    "sourcesContent": [
+        "// 生产环境配置\nconst path = require(\"path\");\nexports.model = {\n    mysql: {\n        database: \"blog\",\n        host: \"127.0.0.1\",\n        port: \"\",\n        user: \"root\",\n        password: \"mx102005\"\n    }\n};\n\nexports.view = {\n    common: {\n        viewPath: path.join(think.ROOT_PATH, \"runtime/view\")\n    }\n};\n"
+    ]
+}

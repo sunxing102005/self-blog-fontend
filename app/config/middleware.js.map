@@ -1,0 +1,37 @@
+{
+    "version": 3,
+    "sources": [
+        "../../src/config/middleware.js"
+    ],
+    "names": [
+        "path",
+        "require",
+        "isDev",
+        "think",
+        "env",
+        "cors",
+        "module",
+        "exports",
+        "handle",
+        "options",
+        "origin",
+        "ctx",
+        "logRequest",
+        "sendResponseTime",
+        "enable",
+        "root",
+        "join",
+        "ROOT_PATH",
+        "publicPath",
+        "isCli",
+        "debug",
+        "templates",
+        "uploadDir",
+        "suffix"
+    ],
+    "mappings": "AAAA,MAAMA,OAAOC,QAAQ,MAAR,CAAb;AACA,MAAMC,QAAQC,MAAMC,GAAN,KAAc,aAA5B;AACA,MAAMC,OAAOJ,QAAQ,WAAR,CAAb;AACA;AACAK,OAAOC,OAAP,GAAiB,CACb;AACIC,YAAQH,IADZ;AAEII,aAAS;AACLC,gBAAQC,OAAO;AACX,mBAAO,GAAP;AACH;AAHI;AAFb,CADa,EASb;AACIH,YAAQ,MADZ;AAEIC,aAAS;AACLG,oBAAYV,KADP;AAELW,0BAAkBX;AAFb;AAFb,CATa,EAgBb;AACIM,YAAQ,UADZ;AAEIM,YAAQ,IAFZ;AAGIL,aAAS;AACLM,cAAMf,KAAKgB,IAAL,CAAUb,MAAMc,SAAhB,EAA2B,KAA3B,CADD;AAELC,oBAAY;AAFP;AAHb,CAhBa,EAwBb;AACIV,YAAQ,OADZ;AAEIM,YAAQ,CAACX,MAAMgB,KAFnB;AAGIV,aAAS;AACLW,eAAOlB,KADF;AAELmB,mBAAW;AACP,iBAAKrB,KAAKgB,IAAL,CAAUb,MAAMc,SAAhB,EAA2B,qBAA3B,CADE;AAEP,iBAAKjB,KAAKgB,IAAL,CAAUb,MAAMc,SAAhB,EAA2B,qBAA3B;AAFE;AAFN;AAHb,CAxBa,EAmCb;AACIT,YAAQ,SADZ;AAEIC,aAAS;AACLa,mBAAWtB,KAAKgB,IAAL,CAAUb,MAAMc,SAAhB,EAA2B,cAA3B;AADN;AAFb,CAnCa,EAyCb;AACIT,YAAQ,QADZ;AAEIC,aAAS;AACLc,gBAAQ,CAAC,OAAD;AADH;AAFb,CAzCa,EA+Cb,OA/Ca,EAgDb,YAhDa,CAAjB",
+    "file": "../../src/config/middleware.js",
+    "sourcesContent": [
+        "const path = require(\"path\");\nconst isDev = think.env === \"development\";\nconst cors = require(\"koa2-cors\");\n// const whiteList = [\"http://localhost:8362/\", \"http://47.97.161.236:8362/\"];\nmodule.exports = [\n    {\n        handle: cors,\n        options: {\n            origin: ctx => {\n                return \"*\";\n            }\n        }\n    },\n    {\n        handle: \"meta\",\n        options: {\n            logRequest: isDev,\n            sendResponseTime: isDev\n        }\n    },\n    {\n        handle: \"resource\",\n        enable: true,\n        options: {\n            root: path.join(think.ROOT_PATH, \"www\"),\n            publicPath: /^\\/(static|uploads|favicon\\.ico|index\\.html|admin\\.html)/\n        }\n    },\n    {\n        handle: \"trace\",\n        enable: !think.isCli,\n        options: {\n            debug: isDev,\n            templates: {\n                404: path.join(think.ROOT_PATH, \"view/error_404.html\"),\n                500: path.join(think.ROOT_PATH, \"view/error_500.html\")\n            }\n        }\n    },\n    {\n        handle: \"payload\",\n        options: {\n            uploadDir: path.join(think.ROOT_PATH, \"runtime/data\")\n        }\n    },\n    {\n        handle: \"router\",\n        options: {\n            suffix: [\".html\"]\n        }\n    },\n    \"logic\",\n    \"controller\"\n];\n"
+    ]
+}

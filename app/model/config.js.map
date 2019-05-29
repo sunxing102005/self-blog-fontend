@@ -1,0 +1,32 @@
+{
+    "version": 3,
+    "sources": [
+        "../../src/model/config.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "think",
+        "Model",
+        "getList",
+        "type",
+        "map",
+        "list",
+        "where",
+        "select",
+        "data",
+        "i",
+        "name",
+        "JSON",
+        "parse",
+        "value",
+        "save",
+        "stringify",
+        "thenUpdate"
+    ],
+    "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,KAApB,CAA0B;AACzC;;;;;AAKMC,SAAN,CAAcC,OAAO,EAArB,EAAyB;AAAA;;AAAA;AACvB,YAAMC,MAAM,EAAZ;AACA,UAAID,IAAJ,EAAU;AACRC,YAAID,IAAJ,GAAWA,IAAX;AACD;AACD,YAAME,OAAO,MAAM,MAAKC,KAAL,CAAWF,GAAX,EAAgBG,MAAhB,EAAnB;AACA,YAAMC,OAAO,EAAb;AACA,WAAK,MAAMC,CAAX,IAAgBJ,IAAhB,EAAsB;AACpBG,aAAKH,KAAKI,CAAL,EAAQC,IAAb,IAAqBC,KAAKC,KAAL,CAAWP,KAAKI,CAAL,EAAQI,KAAnB,CAArB;AACD;AACD,aAAOL,IAAP;AAVuB;AAWxB;;AAED;;;;;;AAMMM,MAAN,CAAWJ,IAAX,EAAiBG,KAAjB,EAAwB;AAAA;;AAAA;AACtB,YAAML,OAAO;AACXE,cAAMA,IADK;AAEXG,eAAOF,KAAKI,SAAL,CAAeF,KAAf;AAFI,OAAb;AAIA,aAAO,OAAKG,UAAL,CAAgBR,IAAhB,EAAsB,EAAEE,MAAMA,IAAR,EAAtB,CAAP;AALsB;AAMvB;AA/BwC,CAA3C",
+    "file": "../../src/model/config.js",
+    "sourcesContent": [
+        "module.exports = class extends think.Model {\n  /**\n     * 获取配置列表\n     * @param  {String} type [description]\n     * @return {[type]}      [description]\n     */\n  async getList(type = '') {\n    const map = {};\n    if (type) {\n      map.type = type;\n    }\n    const list = await this.where(map).select();\n    const data = {};\n    for (const i in list) {\n      data[list[i].name] = JSON.parse(list[i].value);\n    }\n    return data;\n  }\n\n  /**\n     * 保存配置\n     * @param  {[type]} name  [description]\n     * @param  {[type]} value [description]\n     * @return {[type]}       [description]\n     */\n  async save(name, value) {\n    const data = {\n      name: name,\n      value: JSON.stringify(value)\n    };\n    return this.thenUpdate(data, { name: name });\n  }\n};\n"
+    ]
+}
