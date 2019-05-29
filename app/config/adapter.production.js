@@ -19,6 +19,6 @@ exports.model = {
 
 exports.view = {
   common: {
-    viewPath: path.join(think.ROOT_PATH, 'runtime/view')
+    viewPath: path.join(think.ROOT_PATH, '/view')
   }
 };
