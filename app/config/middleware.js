@@ -43,4 +43,3 @@ module.exports = [{
         suffix: [".html"]
     }
 }, "logic", "controller"];
-//# sourceMappingURL=middleware.js.map

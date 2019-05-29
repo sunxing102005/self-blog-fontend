@@ -41,4 +41,3 @@ module.exports = class extends think.Model {
     })();
   }
 };
-//# sourceMappingURL=config.js.map

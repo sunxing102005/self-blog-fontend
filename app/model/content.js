@@ -121,4 +121,3 @@ module.exports = class extends think.Model {
         })();
     }
 };
-//# sourceMappingURL=content.js.map

@@ -120,4 +120,3 @@ module.exports = class extends think.Controller {
     }
     __call() {}
 };
-//# sourceMappingURL=rest.js.map

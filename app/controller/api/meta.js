@@ -18,4 +18,3 @@ module.exports = class extends BaseRest {
     })();
   }
 };
-//# sourceMappingURL=meta.js.map
