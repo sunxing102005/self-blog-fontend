@@ -9,9 +9,9 @@
         "workers",
         "port"
     ],
-    "mappings": "AAAA;AACAA,OAAOC,OAAP,GAAiB;AACbC,aAAS,CADI;AAEbC,UAAM;AAFO,CAAjB",
+    "mappings": "AAAA;AACAA,OAAOC,OAAP,GAAiB;AACfC,WAAS,CADM;AAEfC,QAAM;AAFS,CAAjB",
     "file": "../../src/config/config.production.js",
     "sourcesContent": [
-        "// production config, it will load in production enviroment\nmodule.exports = {\n    workers: 0,\n    port: 8365\n};\n"
+        "// production config, it will load in production enviroment\nmodule.exports = {\n  workers: 3,\n  port: 8365\n};\n"
     ]
 }

@@ -9,9 +9,9 @@
         "workers",
         "port"
     ],
-    "mappings": "AAAA;AACAA,OAAOC,OAAP,GAAiB;AACbC,aAAS,CADI;AAEbC,UAAM;AAFO,CAAjB",
+    "mappings": "AAAA;AACAA,OAAOC,OAAP,GAAiB;AACfC,WAAS,CADM;AAEfC,QAAM;AAFS,CAAjB",
     "file": "../../src/config/config.js",
     "sourcesContent": [
-        "// default config\nmodule.exports = {\n    workers: 1,\n    port: 8365\n};\n"
+        "// default config\nmodule.exports = {\n  workers: 1,\n  port: 8365\n};\n"
     ]
 }
