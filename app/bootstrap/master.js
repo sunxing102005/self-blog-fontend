@@ -51,5 +51,5 @@ router.get('/prometheus', (() => {
 
 app.use(router.routes()).use(router.allowedMethods());
 
-app.listen(3002);
+app.listen(3005);
 //# sourceMappingURL=master.js.map
