@@ -9,7 +9,7 @@ exports.model = {
         // password: 'mx102005',
         prefix: "sx_",
         encoding: "utf8",
-        host: "127.0.0.01",
+        host: "172.16.125.21",
         port: 3306,
         user: "root",
         password: "mx102005",

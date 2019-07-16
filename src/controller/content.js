@@ -35,6 +35,7 @@ module.exports = class extends Base {
             .where(condition)
             .fieldReverse(fieldReverse)
             .order(orderby)
+            // .limit(1, 1)
             .select();
         return this.success({ content: list });
     }

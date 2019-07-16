@@ -35,7 +35,9 @@ module.exports = class extends Base {
             !fieldReverse ? fieldReverse = defaultFieldReverse : "";
             recommend ? condition["recommend"] = recommend : "";
             orderby ? "" : orderby = defaultOrderby;
-            const list = yield _this2.model("content").where(condition).fieldReverse(fieldReverse).order(orderby).select();
+            const list = yield _this2.model("content").where(condition).fieldReverse(fieldReverse).order(orderby)
+            // .limit(1, 1)
+            .select();
             return _this2.success({ content: list });
         })();
     }

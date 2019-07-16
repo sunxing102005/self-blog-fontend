@@ -24,9 +24,9 @@
         "think",
         "ROOT_PATH"
     ],
-    "mappings": "AAAA;AACA,MAAMA,OAAOC,QAAQ,MAAR,CAAb;AACAC,QAAQC,KAAR,GAAgB;AACZC,WAAO;AACHC,kBAAU,MADP;AAEH;AACA;AACA;AACA;AACAC,gBAAQ,KANL;AAOHC,kBAAU,MAPP;AAQHC,cAAM,YARH;AASHC,cAAM,IATH;AAUHC,cAAM,MAVH;AAWHC,kBAAU,UAXP;AAYHC,qBAAa;AAZV;AADK,CAAhB;;AAiBAV,QAAQW,IAAR,GAAe;AACXC,YAAQ;AACJC,kBAAUf,KAAKgB,IAAL,CAAUC,MAAMC,SAAhB,EAA2B,OAA3B;AADN;AADG,CAAf",
+    "mappings": "AAAA;AACA,MAAMA,OAAOC,QAAQ,MAAR,CAAb;AACAC,QAAQC,KAAR,GAAgB;AACZC,WAAO;AACHC,kBAAU,MADP;AAEH;AACA;AACA;AACA;AACAC,gBAAQ,KANL;AAOHC,kBAAU,MAPP;AAQHC,cAAM,eARH;AASHC,cAAM,IATH;AAUHC,cAAM,MAVH;AAWHC,kBAAU,UAXP;AAYHC,qBAAa;AAZV;AADK,CAAhB;;AAiBAV,QAAQW,IAAR,GAAe;AACXC,YAAQ;AACJC,kBAAUf,KAAKgB,IAAL,CAAUC,MAAMC,SAAhB,EAA2B,OAA3B;AADN;AADG,CAAf",
     "file": "../../src/config/adapter.production.js",
     "sourcesContent": [
-        "// 生产环境配置\nconst path = require(\"path\");\nexports.model = {\n    mysql: {\n        database: \"blog\",\n        // host: '127.0.0.1',\n        // port: '',\n        // user: 'root',\n        // password: 'mx102005',\n        prefix: \"sx_\",\n        encoding: \"utf8\",\n        host: \"127.0.0.01\",\n        port: 3306,\n        user: \"root\",\n        password: \"mx102005\",\n        dateStrings: true\n    }\n};\n\nexports.view = {\n    common: {\n        viewPath: path.join(think.ROOT_PATH, \"/view\")\n    }\n};\n"
+        "// 生产环境配置\nconst path = require(\"path\");\nexports.model = {\n    mysql: {\n        database: \"blog\",\n        // host: '127.0.0.1',\n        // port: '',\n        // user: 'root',\n        // password: 'mx102005',\n        prefix: \"sx_\",\n        encoding: \"utf8\",\n        host: \"172.16.125.21\",\n        port: 3306,\n        user: \"root\",\n        password: \"mx102005\",\n        dateStrings: true\n    }\n};\n\nexports.view = {\n    common: {\n        viewPath: path.join(think.ROOT_PATH, \"/view\")\n    }\n};\n"
     ]
 }
